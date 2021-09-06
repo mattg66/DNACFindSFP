@@ -8,8 +8,8 @@ username = ""
 password = ""
 dnacIp = "x.x.x.x"
 sfpModulesSN = [
-    'SFP1SN',
-    'SFP2SN'
+    'xxx',
+    'xxx'
 ]
 loginHeader = username + ":" + password
 base64Login = base64.b64encode(loginHeader.encode()).decode()
@@ -24,4 +24,4 @@ for device in devices['response']:
         for sfpModule in sfpModules['response']:
             for SN in sfpModulesSN:
                 if (sfpModule['serialNumber'] == SN):
-                    print("SFP Serial: " + sfpModule['serialNumber'] + " Device Hostname: " + device['hostname'])
+                    print("SFP Serial: " + sfpModule['serialNumber'] + ", Device Hostname: " + device['hostname']  + ", Port: " + sfpModule['name'])
